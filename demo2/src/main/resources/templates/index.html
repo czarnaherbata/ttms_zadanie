@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Users:</h1>
+<ol th:each="user:${users}">
+    <li th:text="${user.name +' ' + user.surname}"></li>
+    <a th:href="@{'/index/{id}'(id=${users.indexOf(user)})}">Show this user</a>
+    <a th:href="@{'/index/remove'(id=${users.indexOf(user)})}">Delete this user</a>
+    <a th:href="@{'/index/add'(id=${users.indexOf(user)})}">Show this user</a>
+
+
+
+</ol>
+</body>
+</html>
